@@ -1,11 +1,11 @@
-<div class="bg-black min-h-screen p-4">
+<div class="bg-cyan-950 min-h-screen p-4">
     <title-component class="text-white underline font-medium text-[25px]"
         [title]="'Bienvenido a la página de Dragon Ball'" />
     <div class="flex flex-col items-center justify-center gap-4">
-        <form-component (characterCreated)="addCharacter($event)" />
+        <form-component (characterCreated)="service.addCharacter($event)" />
 
-        @if (characters().length > 0) {
-        <list-component [characters]="characters()" (idDelete)="deleteCharacter($event)" />
+        @if (service.characters().length > 0) {
+        <list-component [characters]="service.characters()" (idDelete)="service.deleteCharacter($event)" />
         }@else {
         <p class="text-white">No hay personajes para mostrar</p>
         }

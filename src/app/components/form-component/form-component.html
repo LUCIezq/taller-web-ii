@@ -1,15 +1,18 @@
 @if (emptyFields()) {
-<div class="bg-red-500 text-white p-4 rounded mb-4">
+<div class="bg-red-500 text-white p-4 rounded mb-4 justify-between flex items-center">
     {{emptyFields()}}
+    <button class="cursor-pointer" (click)="emptyFields.set('')">
+        X
+    </button>
 </div>
 }
-<div class="bg-gray-800 p-4 max-w-96 flex flex-col gap-4 rounded">
+<div class="bg-white p-7 min-w-lg  flex flex-col gap-4 rounded-2xl">
     @for (item of inputs; track $index) {
     <div class="flex flex-col gap-2">
 
-        <label [for]="item.id" class="text-white font-medium">{{item.label}}</label>
+        <label [for]="item.id" class="text-black font-medium">{{item.label}}</label>
         <input [value]="item.model()" [required]="item.required" [type]="item.type" [id]="item.id"
-            (input)="item.model.set($event.target.value)" [placeholder]="item.placeholder" class="bg-gray-600 text-white placeholder:text-gray-400 border border-gray-500 focus:outline-none 
+            (input)="item.model.set($event.target.value)" [placeholder]="item.placeholder" class="bg-gray-100 text-black placeholder:text-gray-700 border border-gray-500 focus:outline-none 
             focus:ring-2 focus:ring-blue-500 focus:border-transparent rounded py-2 px-3" />
     </div>
     }

@@ -1,11 +1,12 @@
 <div class="flex gap-5">
     @for (item of characters(); track item.id) {
-    <div class="bg-gray-700 p-4 max-w-96 flex flex-col gap-4 rounded">
-        <span (click)="emitDeleteCharacter(item.id)" class="text-white cursor-pointer text-end">X</span>
-        <h2 class="text-white font-bold text-xl">ID: {{item.id}}</h2>
-        <h2 class="text-white font-bold text-xl">Nombre: {{item.nombre}}</h2>
-        <p class="text-white">Poder: {{item.poder}}</p>
-        <p class="text-white">Daño: {{item.dano}}</p>
+    <div class="bg-white p-4 min-w-60 flex flex-col gap-4 rounded-2xl">
+        <span (click)="emitDeleteCharacter(item.id)" class="cursor-pointer text-end">X</span>
+        <div>
+            <p class="text-black font-medium">Nombre: {{item.nombre}}</p>
+            <p class="text-black font-medium">Poder: {{item.poder}}</p>
+            <p class="text-black font-medium">Daño: {{item.dano}}</p>
+        </div>
     </div>
     }
 </div>
