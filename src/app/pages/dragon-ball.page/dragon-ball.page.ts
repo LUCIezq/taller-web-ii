@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { TitleComponent } from '../../components/title.component/title.component';
 import { FormComponent } from '../../components/form-component/form-component';
 import { ListComponent } from "../../components/list-component/list-component";
